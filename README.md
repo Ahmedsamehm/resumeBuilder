@@ -1,4 +1,4 @@
-# My Project (Demo)
+# resumeBuilder (Demo)
 
 This is a demo project.  
 Originally built in React.  
@@ -50,3 +50,4 @@ Uses export features:
 ## How to Run
 1. Clone the repo  
 2. Install dependencies:
+
