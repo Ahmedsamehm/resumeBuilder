@@ -1,0 +1,215 @@
+<div class="font-sans text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-white shadow px-4 py-3 fixed top-0 w-full z-50">
+    <div class="flex justify-between items-center">
+      <a
+        routerLink="/home"
+        class="flex items-center text-xl font-bold text-indigo-600"
+      >
+        <span class="mr-2">📄</span> ResumeAI
+      </a>
+
+      <div class="flex items-center gap-6">
+        <a
+          routerLink="/dashboard"
+          class="text-gray-600 hover:text-indigo-600 transition"
+          >Dashboard</a
+        >
+        <a
+          routerLink="/login"
+          class="text-gray-600 hover:text-indigo-600 transition"
+          >Login</a
+        >
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section
+    class="min-h-screen flex flex-col justify-center items-center bg-gray-200 pt-20 pb-16"
+  >
+    <div class="mb-4 flex justify-center gap-2">
+      <button
+        class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium"
+      >
+        ⭐ Featured
+      </button>
+      <button
+        class="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+      >
+        ⚡ AI-Powered
+      </button>
+    </div>
+
+    <h1 class="text-4xl font-bold text-center mb-4 text-gray-900">
+      Create Your <span class="text-indigo-600">Professional</span><br />
+      Resume in Minutes
+    </h1>
+
+    <p class="text-gray-600 mb-2">
+      Effortlessly craft a stunning resume with the power of AI.
+    </p>
+    <p class="text-gray-600 mb-6">
+      Get noticed by recruiters and land your dream job faster.
+    </p>
+
+    <div class="mt-4">
+      <a
+        routerLink="/dashboard"
+        class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition"
+      >
+        Build Your Resume Now
+      </a>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="h-2 bg-indigo-100"></div>
+
+  <!-- Features Section -->
+  <div class="py-12 bg-white">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-3xl font-bold mb-4 text-gray-900">
+        Features for Perfect Resumes
+      </h2>
+      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+        Leverage cutting-edge tools to create resumes that stand out and get
+        results.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card -->
+        <div
+          class="bg-white border border-gray-200 p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
+        >
+          <div class="text-center mb-4">
+            <div class="text-indigo-600 text-xl mb-2">🔍</div>
+            <div
+              class="text-sm bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1 rounded-full inline-block"
+            >
+              Smart Templates
+            </div>
+          </div>
+          <h5 class="font-bold text-lg mb-2">{{ heading_card1 }}</h5>
+          <p class="text-gray-600">
+            Choose from professionally designed templates that pass ATS systems
+            and impress recruiters.
+          </p>
+        </div>
+
+        <!-- Card -->
+        <div
+          class="bg-white border border-gray-200 p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
+        >
+          <div class="text-center mb-4">
+            <div class="text-indigo-600 text-xl mb-2">🔽</div>
+            <div
+              class="text-sm bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1 rounded-full inline-block"
+            >
+              ATS Ready
+            </div>
+          </div>
+          <h5 class="font-bold text-lg mb-2">{{ heading_card2 }}</h5>
+          <p class="text-gray-600">
+            Download in PDF, Word, or plain text formats optimized for various
+            application methods.
+          </p>
+        </div>
+
+        <!-- Card -->
+        <div
+          class="bg-white border border-gray-200 p-6 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
+        >
+          <div class="text-center mb-4">
+            <div class="text-indigo-600 text-xl mb-2">🎯</div>
+            <div
+              class="text-sm bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1 rounded-full inline-block"
+            >
+              Tailored
+            </div>
+          </div>
+          <h5 class="font-bold text-lg mb-2">{{ heading_card3 }}</h5>
+          <p class="text-gray-600">
+            Get a detailed ATS score with specific recommendations to improve
+            performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="h-2 bg-green-100"></div>
+
+  <!-- CTA Section -->
+  <div class="py-12 bg-gray-200">
+    <div class="container mx-auto text-center px-4">
+      <div
+        class="rounded-xl bg-white shadow-lg p-8 max-w-4xl mx-auto border border-green-200"
+      >
+        <p class="text-indigo-600 font-semibold mb-2">
+          ✨ Ready to Get Started?
+        </p>
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">
+          Transform Your Career
+        </h2>
+        <p class="text-gray-600 mb-6">
+          Join thousands of professionals who have boosted their job search
+          success.
+        </p>
+        <button
+          routerLink="/create-cv"
+          class="border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-6 py-2 rounded-full transition"
+        >
+          Build Your Resume Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 p-6 bg-white">
+    <div
+      class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6"
+    >
+      <div>
+        <h5 class="font-bold text-xl flex items-center text-indigo-600">
+          <span class="mr-2">📄</span>ResumeAI
+        </h5>
+      </div>
+
+      <div class="text-center">
+        <div class="flex flex-col md:flex-row items-center gap-4">
+          <a routerLink="/home" class="text-gray-600 hover:text-indigo-600"
+            >Home</a
+          >
+          <a routerLink="/dashboard" class="text-gray-600 hover:text-indigo-600"
+            >Dashboard</a
+          >
+          <a routerLink="/login" class="text-gray-600 hover:text-indigo-600"
+            >Login</a
+          >
+          <a href="#" class="text-gray-600 hover:text-indigo-600">Contact</a>
+        </div>
+        <p class="text-gray-500 mt-3 text-sm">
+          © 2025 Created by
+          <span class="text-indigo-600 font-bold flex"
+            >Ahmed Abdalrazek & Ahmed Sameh</span
+          >
+        </p>
+      </div>
+
+      <div class="flex gap-4">
+        <a href="#" class="text-gray-600 hover:text-indigo-600"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="#" class="text-gray-600 hover:text-indigo-600"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="#" class="text-gray-600 hover:text-indigo-600"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </div>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,120 @@
+<form *ngIf="form.step === 1" class="space-y-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <!-- Column 1 -->
+    <div>
+      <label for="fullName" class="block text-white mb-1">Full Name</label>
+      <input
+        type="text"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="fullName"
+        placeholder="Full Name"
+        [(ngModel)]="form.personalInformation.fullName"
+        name="fullName"
+      />
+    </div>
+
+    <!-- Column 2 -->
+    <div>
+      <label for="position" class="block text-white mb-1">Position</label>
+      <input
+        type="text"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="position"
+        placeholder="Position"
+        [(ngModel)]="form.personalInformation.position"
+        name="position"
+      />
+    </div>
+
+    <!-- Column 1 -->
+    <div>
+      <label for="address" class="block text-white mb-1">Address</label>
+      <input
+        type="text"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="address"
+        placeholder="123 Main St, City, Country"
+        [(ngModel)]="form.personalInformation.address"
+        name="address"
+      />
+    </div>
+
+    <!-- Column 2 -->
+    <div>
+      <label for="phone" class="block text-white mb-1">Phone</label>
+      <input
+        type="number"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="phone"
+        placeholder="123456789"
+        [(ngModel)]="form.personalInformation.phone"
+        name="phone"
+      />
+    </div>
+
+    <!-- Column 1 -->
+    <div>
+      <label for="email" class="block text-white mb-1">Email address</label>
+      <input
+        type="email"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="email"
+        placeholder="name@example.com"
+        [(ngModel)]="form.personalInformation.email"
+        name="email"
+      />
+    </div>
+
+    <!-- Column 2 -->
+    <div>
+      <label for="linkedIn" class="block text-white mb-1">Linkedin</label>
+      <input
+        type="url"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="linkedIn"
+        placeholder="linkedin.com"
+        [(ngModel)]="form.personalInformation.linkedIn"
+        name="linkedIn"
+      />
+    </div>
+
+    <!-- Column 1 -->
+    <div>
+      <label for="github" class="block text-white mb-1">Github</label>
+      <input
+        type="url"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="github"
+        placeholder="github.com"
+        [(ngModel)]="form.personalInformation.github"
+        name="github"
+      />
+    </div>
+
+    <!-- Column 2 -->
+    <div>
+      <label for="portfolio" class="block text-white mb-1">Portfolio</label>
+      <input
+        type="url"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="portfolio"
+        placeholder="portfolio.com"
+        [(ngModel)]="form.personalInformation.portfolio"
+        name="portfolio"
+      />
+    </div>
+  </div>
+
+  <!-- Full width textarea -->
+  <div>
+    <label for="summary" class="block text-white mb-1">Summary</label>
+    <textarea
+      class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+      id="summary"
+      placeholder="Summary"
+      [(ngModel)]="form.personalInformation.summary"
+      name="summary"
+      rows="4"
+    ></textarea>
+  </div>
+</form>

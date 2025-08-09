@@ -1,0 +1,37 @@
+<div class="p-6 flex flex-col justify-center">
+  @if (form.step === 1) {
+  <app-personal-info></app-personal-info>
+  } @if (form.step === 2) {
+  <app-work-experience></app-work-experience>
+  } @if (form.step === 3) {
+  <app-education></app-education>
+  } @if (form.step === 4) {
+  <app-skills></app-skills>
+  }
+
+  <!-- Navigation Buttons -->
+
+  <!-- Navigation Buttons -->
+  <div class="mt-6 flex gap-3">
+    <button
+      class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 disabled:opacity-50"
+      (click)="form.prevStep()"
+      [disabled]="form.step === 1"
+    >
+      Previous
+    </button>
+    <button
+      class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+      (click)="form.nextStep()"
+      [disabled]="form.step === 4"
+    >
+      Next
+    </button>
+    <button
+      class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+      (click)="this.form.saveCurrentResume()"
+    >
+      Save
+    </button>
+  </div>
+</div>

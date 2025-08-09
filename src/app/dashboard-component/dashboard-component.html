@@ -1,0 +1,64 @@
+<div class="flex min-h-screen bg-gray-950 text-white">
+  <div class="container mx-auto p-6">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-bold">Welcome Back, {{ user_name }} 👋</h2>
+    </div>
+
+    <div class="text-right mb-6">
+      <button
+        class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded transition-all duration-300 shadow-md hover:shadow-lg"
+        (click)="createResume()"
+      >
+        ➕ Add Resume
+      </button>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left mt-6"
+      >
+        <div
+          *ngFor="let resume of formService.resumes"
+          class="bg-gray-900 border border-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+        >
+          <div>
+            <h3 class="text-xl font-bold">
+              {{ resume.personalInformation.fullName || "Untitled Resume" }}
+            </h3>
+            <p class="text-gray-400 mb-1">
+              {{
+                resume.personalInformation.position || "No position specified"
+              }}
+            </p>
+            <p class="text-gray-400 mb-1">
+              {{ resume.personalInformation.email || "No email specified" }}
+            </p>
+            <p class="text-gray-400 mb-1">
+              {{ resume.personalInformation.phone || "No phone specified" }}
+            </p>
+            <p class="text-gray-500 text-sm">ID: {{ resume.resumeId }}</p>
+          </div>
+          <div class="flex justify-between mt-4">
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-all duration-300 shadow-md hover:shadow-lg"
+              (click)="openResume(resume.resumeId)"
+            >
+              Open
+            </button>
+            <button
+              class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded transition-all duration-300 shadow-md hover:shadow-lg"
+              (click)="deleteResume(resume.resumeId, $event)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="bg-gray-900 border border-gray-800 p-6 rounded-lg shadow-md mt-5"
+    >
+      <h5 class="text-gray-400 mb-2">Total Resumes</h5>
+      <h2 class="text-blue-400 text-3xl font-bold">{{ numOfResume }}</h2>
+    </div>
+  </div>
+</div>

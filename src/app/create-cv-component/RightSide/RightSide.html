@@ -1,0 +1,129 @@
+<main id="pdf-content" #pdfContent class="bg-white text-black">
+  <!-- PersonalInfo  Section  -->
+  <section class="text-black space-y-3 p-2">
+    <!-- Header / Contact -->
+    <header class="text-center text-xs mx-auto">
+      <ul class="flex justify-between items-center text-xs w-full">
+        <!-- Left: Email -->
+        <li class="w-1/3 text-left">
+          <span>{{
+            form.personalInformation.email || "johndoe@example.com"
+          }}</span>
+        </li>
+
+        <!-- Center: Name, Position, Phone, Address -->
+        <li class="flex flex-col items-center text-center w-1/3 gap-1">
+          <h1 class="text-sm font-semibold capitalize">
+            {{ form.personalInformation.fullName || "John Doe" }}
+          </h1>
+          <span>
+            {{ form.personalInformation.position || "Software Engineer" }}
+          </span>
+          <span>
+            {{ form.personalInformation.phone || "0123456789" }}
+          </span>
+          <span>
+            {{ form.personalInformation.address || "Cairo, Egypt" }}
+          </span>
+        </li>
+
+        <!-- Right: Links -->
+        <li class="flex flex-col items-end w-1/3 gap-1 text-right">
+          <a
+            class="text-blue-600 hover:underline"
+            [href]="
+              form.personalInformation.linkedIn || 'https://www.linkedin.com/'
+            "
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            class="text-blue-600 hover:underline"
+            [href]="form.personalInformation.github || 'https://github.com/'"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            class="text-blue-600 hover:underline"
+            [href]="form.personalInformation.portfolio || 'https://github.com/'"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Portfolio</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <!-- Summary -->
+    <div>
+      <h2 class="text-md font-semibold mb-1 capitalize">Summary</h2>
+      <p class="text-md leading-normal">
+        {{
+          form.personalInformation.summary ||
+            "Passionate developer with a focus on creating performant and user-friendly applications."
+        }}
+      </p>
+    </div>
+    <hr class="border-gray-400" />
+  </section>
+  <!-- Projects Section -->
+  <section class="p-2 space-y-3">
+    <h2 class="capitalize font-bold text-md">Projects</h2>
+
+    <div *ngFor="let exp of form.workExperiences" class="mt-3">
+      <div class="flex justify-between !p-0">
+        <ul class="flex gap-1 text-black text-sm !p-0">
+          <li class="font-medium tracking-tighter text-base">
+            {{ exp.jobTitle || "Job Title" }},
+          </li>
+          <li class="tracking-tighter text-base">
+            {{ exp.company || "Company" }},
+          </li>
+          <li class="tracking-tighter text-base">
+            {{ exp.location || "Location" }}
+          </li>
+        </ul>
+
+        <p
+          class="text-black text-base font-medium tracking-tighter align-middle"
+        >
+          <span class="font-medium">
+            {{ exp.Date || "2024-2025" }}
+          </span>
+        </p>
+      </div>
+
+      <p class="text-black text-base align-middle mt-1">
+        {{ exp.projectDetails || "Project Details" }}
+      </p>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="p-2 space-y-3">
+    <h2 class="capitalize font-bold text-md">Education</h2>
+    <hr class="border-gray-400" />
+    <div class="mt-3 flex justify-between">
+      <div class="flex-col gap-1">
+        <h3 class="font-bold">
+          {{ form.education.university || "university" }}
+        </h3>
+        <p>{{ form.education.degree || "degree" }}</p>
+        <p>{{ form.education.location || "location" }}</p>
+      </div>
+      <p>{{ form.education.graduationYear || "graduationYear" }}</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="p-2 space-y-3">
+    <h2 class="capitalize font-bold text-md">Skills</h2>
+    <hr class="border-gray-400" />
+
+    <ul class="list-outside text-black grid grid-cols-2 gap-1">
+      <li class="" *ngFor="let skill of form.skills">- {{ skill }}</li>
+    </ul>
+  </section>
+</main>

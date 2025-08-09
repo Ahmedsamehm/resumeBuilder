@@ -1,0 +1,54 @@
+<div *ngIf="form.step === 4" class="space-y-6">
+  <!-- Single Form for Input -->
+
+  <div class="rounded space-y-4">
+    <h3 class="text-lg font-semibold mb-4">Add Skill</h3>
+
+    <div class="flex flex-col gap-2">
+      <input
+        type="text"
+        class="w-full p-2 border border-gray-300 rounded"
+        [(ngModel)]="newSkill"
+        name="newSkill"
+        placeholder="Add a new skill"
+        (keyup.enter)="addSkill()"
+      />
+      <button
+        class="btn btn-success mt-3 border p-2 rounded-2xl hover:bg-white hover:text-black transition-all cursor-pointer w-sm mx-auto"
+        type="button"
+        (click)="addSkill()"
+      >
+        Add Skill
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="form.skills.length > 0" class="mt-6">
+    <h3 class="text-lg font-semibold mb-4">Saved Skills</h3>
+
+    <div class="space-y-2">
+      <div
+        *ngFor="let skill of form.skills; let i = index"
+        class="p-3 bg-transparent border rounded flex justify-between items-center"
+      >
+        <span class="font-medium">{{ skill }}</span>
+
+        <button
+          class="btn btn-danger btn-sm ml-4 bg-red-500 border-0 text-white hover:bg-red-600 p-2 rounded-xl cursor-pointer"
+          type="button"
+          (click)="removeSkill(i)"
+        >
+          Delete
+        </button>
+      </div>
+
+      <button
+        class="btn btn-success mt-3 border p-2 rounded-2xl hover:bg-white hover:text-black transition-all cursor-pointer w-sm mx-auto bg-green-600 text-white no-print"
+        type="button"
+        (click)="downloadPDF()"
+      >
+        📄 Download PDF
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<form *ngIf="form.step === 3" class="space-y-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <label for="university" class="block mb-1 font-medium">University</label>
+      <input
+        type="text"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="university"
+        placeholder="Cairo University"
+        [(ngModel)]="form.education.university"
+        name="university"
+      />
+    </div>
+    <div>
+      <label for="degree" class="block mb-1 font-medium">degree</label>
+      <input
+        type="text"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="degree"
+        placeholder="Cairo degree"
+        [(ngModel)]="form.education.degree"
+        name="degree"
+      />
+    </div>
+    <div>
+      <label for="graduationYear" class="block mb-1 font-medium"
+        >graduationYear</label
+      >
+      <input
+        type="text"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="graduationYear"
+        placeholder="Cairo graduationYear"
+        [(ngModel)]="form.education.graduationYear"
+        name="graduationYear"
+      />
+    </div>
+    <div>
+      <label for="location" class="block mb-1 font-medium">location</label>
+      <input
+        type="text"
+        class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+        id="location"
+        placeholder="Cairo location"
+        [(ngModel)]="form.education.location"
+        name="location"
+      />
+    </div>
+  </div>
+</form>

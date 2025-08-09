@@ -1,0 +1,103 @@
+<div *ngIf="form.step === 2" class="space-y-6">
+  <!-- Single Form for Input -->
+  <form class="rounded space-y-4">
+    <h3 class="text-lg font-semibold mb-4">Add Work Experience</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Job Title -->
+      <div>
+        <label class="block mb-1 font-medium">Job Title</label>
+        <input
+          type="text"
+          class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+          [(ngModel)]="currentExperience.jobTitle"
+          name="jobTitle"
+          placeholder="e.g. Senior Developer"
+        />
+      </div>
+
+      <!-- Company -->
+      <div>
+        <label class="block mb-1 font-medium">Company</label>
+        <input
+          type="text"
+          class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+          [(ngModel)]="currentExperience.company"
+          name="company"
+          placeholder="e.g. ABC Corp"
+        />
+      </div>
+
+      <!-- Dates -->
+      <div>
+        <label class="block mb-1 font-medium">Start Date</label>
+        <input
+          type="text"
+          class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+          [(ngModel)]="currentExperience.Date"
+          name="startDate"
+          placeholder="e.g. Jan 2020"
+        />
+      </div>
+
+      <!-- Location -->
+      <div>
+        <label class="block mb-1 font-medium">Location</label>
+        <input
+          type="text"
+          class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+          [(ngModel)]="currentExperience.location"
+          name="location"
+          placeholder="City, Country"
+        />
+      </div>
+
+      <!-- Project Details -->
+      <div class="md:col-span-2">
+        <label class="block mb-1 font-medium">Project Details</label>
+        <textarea
+          class="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+          [(ngModel)]="currentExperience.projectDetails"
+          name="description"
+          placeholder="Describe your responsibilities"
+        ></textarea>
+      </div>
+    </div>
+
+    <button
+      class="btn btn-success mt-3 border p-2 rounded-2xl hover:bg-white hover:text-black transition-all cursor-pointer"
+      type="button"
+      (click)="addExperience()"
+    >
+      Add Experience
+    </button>
+  </form>
+
+  <!-- List of Saved Experiences -->
+  <div *ngIf="form.workExperiences.length > 0" class="mt-6">
+    <h3 class="text-lg font-semibold mb-4">Saved Work Experiences</h3>
+
+    <div class="space-y-3">
+      <div
+        *ngFor="let exp of form.workExperiences; let i = index"
+        class="p-4 bg-transparent border rounded flex justify-between items-start"
+      >
+        <div class="flex-1">
+          <div class="font-semibold">{{ exp.jobTitle || "No Title" }}</div>
+          <div class="text-gray-600">{{ exp.company || "No Company" }}</div>
+          <div class="text-sm text-gray-500">
+            {{ exp.Date || "No Date" }} • {{ exp.location || "No Location" }}
+          </div>
+        </div>
+
+        <button
+          class="btn btn-danger btn-sm ml-4 bg-red-500 border-0 text-white hover:bg-red-600 p-2 rounded-xl cursor-pointer"
+          type="button"
+          (click)="removeExperience(i)"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="flex justify-center items-center h-screen bg-black">
+  <div class="p-4 rounded-lg bg-gray-900 w-full max-w-md">
+    <h3 class="text-center text-white text-xl">Welcome Back</h3>
+
+    <form (ngSubmit)="login()">
+      <div class="mb-4">
+        <label for="userName" class="block text-white mb-2">Name</label>
+        <input
+          type="text"
+          class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded"
+          id="userName"
+          name="userName"
+          [(ngModel)]="userName"
+          placeholder="Name Ahmed...."
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-white text-black font-bold py-2 px-4 rounded"
+      >
+        login
+      </button>
+    </form>
+  </div>
+</div>
